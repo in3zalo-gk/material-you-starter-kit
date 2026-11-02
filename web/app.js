@@ -1,4 +1,5 @@
 import { detectLanguage, translate } from './i18n.js';
+import { initGallery } from './gallery.js';
 import { argbFromHex, themeFromSourceColor, applyTheme, themeFromImage } from '@material/material-color-utilities';
 
 const DEFAULT_SEED = '#2f6b46';
@@ -119,6 +120,7 @@ const PALETTE_TONES = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100];
   });
   $('#intensity').addEventListener('input', (event) => { $('#intensityValue').textContent = `${event.target.value}%`; });
   $$('.chip').forEach((chip) => chip.addEventListener('click', () => { $$('.chip').forEach((item) => { item.classList.toggle('is-selected', item === chip); item.setAttribute('aria-pressed', String(item === chip)); }); }));
+  initGallery({ t });
   $('#shapeToggle').addEventListener('click', (event) => { const button = event.currentTarget; button.classList.toggle('is-morphed'); button.setAttribute('aria-pressed', String(button.classList.contains('is-morphed'))); });
   $$('[data-message]').forEach((button) => button.addEventListener('click', () => showToast(button.dataset.message === 'Ação demonstrativa concluída.' ? 'actionDone' : button.dataset.message)));
 
