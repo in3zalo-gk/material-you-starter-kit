@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.2
+
+- Catálogo web com 43 módulos estáveis de @material/web 2.5.0, busca, tema, menus/submenus e diálogo funcional.
+- Exemplo mínimo Material Web com imports individuais, separado do CSS próprio do kit.
+- Android: formulário/lista, menu, DatePicker, TimePicker, bottom sheet e tooltips em Explorar.
+- README reorganizado com badges reais, recursos, quick start, downloads e limites de cobertura.
+- Licenças de dependências preservadas em THIRD_PARTY_NOTICES.md e no build distribuído.
+- Testes de catálogo e atualização coordenada de manifests, APKs e empacotamento.
+- Versões anteriores e seus artefatos permanecem imutáveis.
+
+
 ## 1.0.1
 
 - Seleção conectada: fundo preenchido que desliza entre botões na web e no Android.

@@ -1,0 +1,76 @@
+// Official stable components, loaded individually. Apache-2.0 dependency.
+import '@material/web/button/elevated-button.js';
+import '@material/web/button/filled-button.js';
+import '@material/web/button/filled-tonal-button.js';
+import '@material/web/button/outlined-button.js';
+import '@material/web/button/text-button.js';
+import '@material/web/checkbox/checkbox.js';
+import '@material/web/chips/assist-chip.js';
+import '@material/web/chips/chip-set.js';
+import '@material/web/chips/filter-chip.js';
+import '@material/web/chips/input-chip.js';
+import '@material/web/chips/suggestion-chip.js';
+import '@material/web/dialog/dialog.js';
+import '@material/web/divider/divider.js';
+import '@material/web/elevation/elevation.js';
+import '@material/web/fab/branded-fab.js';
+import '@material/web/fab/fab.js';
+import '@material/web/field/filled-field.js';
+import '@material/web/field/outlined-field.js';
+import '@material/web/focus/md-focus-ring.js';
+import '@material/web/icon/icon.js';
+import '@material/web/iconbutton/filled-icon-button.js';
+import '@material/web/iconbutton/filled-tonal-icon-button.js';
+import '@material/web/iconbutton/icon-button.js';
+import '@material/web/iconbutton/outlined-icon-button.js';
+import '@material/web/list/list.js';
+import '@material/web/list/list-item.js';
+import '@material/web/menu/menu.js';
+import '@material/web/menu/menu-item.js';
+import '@material/web/menu/sub-menu.js';
+import '@material/web/progress/circular-progress.js';
+import '@material/web/progress/linear-progress.js';
+import '@material/web/radio/radio.js';
+import '@material/web/ripple/ripple.js';
+import '@material/web/select/filled-select.js';
+import '@material/web/select/outlined-select.js';
+import '@material/web/select/select-option.js';
+import '@material/web/slider/slider.js';
+import '@material/web/switch/switch.js';
+import '@material/web/tabs/primary-tab.js';
+import '@material/web/tabs/secondary-tab.js';
+import '@material/web/tabs/tabs.js';
+import '@material/web/textfield/filled-text-field.js';
+import '@material/web/textfield/outlined-text-field.js';
+import { applyTheme, argbFromHex, themeFromSourceColor } from '@material/material-color-utilities';
+
+const root = document.documentElement;
+const seed = document.querySelector('#catalogSeed');
+const status = document.querySelector('#catalogStatus');
+function stored(key, fallback) { try { return localStorage.getItem(key) || fallback; } catch { return fallback; } }
+let dark = stored('m3-kit-theme', matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') === 'dark';
+seed.value = /^#[0-9a-f]{6}$/i.test(stored('m3-kit-seed', '')) ? stored('m3-kit-seed') : '#2f6b46';
+function theme() { root.dataset.theme = dark ? 'dark' : 'light'; root.style.colorScheme = root.dataset.theme; applyTheme(themeFromSourceColor(argbFromHex(seed.value)), { target: root, dark }); }
+theme();
+seed.addEventListener('input', theme);
+document.querySelector('#catalogTheme').addEventListener('click', () => { dark = !dark; theme(); });
+const normalize = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+document.querySelector('#catalogSearch').addEventListener('input', event => {
+  const term = normalize(event.target.value.trim());
+  const sections = [...document.querySelectorAll('[data-search]')];
+  sections.forEach(section => { section.hidden = !normalize(section.dataset.search + ' ' + section.textContent).includes(term); });
+  document.querySelector('#catalogEmpty').hidden = sections.some(section => !section.hidden);
+});
+document.querySelectorAll('[data-feedback]').forEach(button => button.addEventListener('click', () => { status.textContent = 'Ação demonstrativa concluída. Nenhum dado foi enviado.'; }));
+const menu = document.querySelector('#catalogMenu');
+document.querySelector('#menuAnchor').addEventListener('click', () => { menu.open = !menu.open; });
+const dialog = document.querySelector('#catalogDialog');
+document.querySelector('#showCatalogDialog').addEventListener('click', () => dialog.show());
+document.querySelector('#cancelCatalogDialog').addEventListener('click', () => dialog.close());
+document.querySelector('#confirmCatalogDialog').addEventListener('click', () => { dialog.close(); status.textContent = 'Confirmação demonstrativa concluída. Nada foi criado no servidor.'; });
+const tabs = document.querySelector('#catalogTabs');
+tabs.addEventListener('change', () => {
+  const panel = document.querySelector('#catalogTabPanel');
+  panel.textContent = tabs.activeTabIndex === 0 ? 'Visão geral: uma interface para personalizar.' : 'Detalhes: use tokens semânticos e importe somente os componentes necessários.';
+  panel.setAttribute('aria-labelledby', tabs.activeTabIndex === 0 ? 'catalogTabOverview' : 'catalogTabDetails');
+});
