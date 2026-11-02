@@ -1,9 +1,36 @@
-# Exemplo Android nativo
+# Android nativo
 
-App de demonstração em Kotlin + Jetpack Compose Material 3, com tema do sistema, paleta dinâmica do papel de parede (Android 12/API 31+) e fallback em versões anteriores. Há uma tela funcional com navegação inferior, filtros, Slider, Switch, cartões, indicador de progresso, snackbar, diálogo e uma animação spring de pressão no cartão. O idioma é escolhido automaticamente pelo sistema (português, inglês ou espanhol) e pode ser alterado em Personalizar → Idioma do app; a escolha manual fica salva localmente. As strings do exemplo ficam organizadas em `app/src/main/java/dev/saynoob/materialyou/AppTranslations.kt`; veja também [o guia de idiomas](../docs/IDIOMAS.md).
+O diretório contém duas aplicações Compose independentes, ambas usando **Material 3 estável 1.4.0**, Kotlin 2.0.21, AGP 8.13.0, `compileSdk 36`, `minSdk 23` e bytecode Java/Kotlin 17.
+
+- `:app` (`dev.saynoob.materialyou`) é a demonstração principal. Ela mantém no aparelho o modo de tema **Sistema / Claro / Escuro** e a opção de **Dynamic Color**. Em Android 12 (API 31) ou superior, Dynamic Color usa a paleta do sistema; desativado ou em versões anteriores, a demo usa sua paleta verde clara/escura de fallback.
+- `:example` (`dev.saynoob.materialyou.example`) é uma aplicação mínima separada, com seu próprio APK e identidade, para testar Compose + Material 3 sem depender do app principal.
+
+As escolhas de tema do app principal usam `SharedPreferences`; estados de navegação e controles usam `rememberSaveable`, portanto são recuperados em recriação de Activity, como rotação. O exemplo mínimo mantém apenas o controle temporário de Dynamic Color durante recriações.
 
 ## Compilar
 
-Abra `android/` no Android Studio com JDK 17. Este projeto usa Android Gradle Plugin 8.13.0, Gradle 8.13+, compileSdk 36, minSdk 23 e Material 3 estável 1.4.0 (consultada em 2026-11-02). Para gerar o APK pelo terminal, com Gradle 8.13 instalado: `gradle -p android assembleDebug`. O APK sai em `android/app/build/outputs/apk/debug/app-debug.apk`.
+Abra **`android/`** no Android Studio com **JDK 17** e SDK Platform 36 instalado. Pelo terminal, na raiz do repositório, use uma instalação local do Gradle 8.13 ou compatível:
 
-Material 3 1.4.0 estável inclui aprimoramentos do sistema de motion, componentes e suporte dinâmico de cor. Recursos Compose explicitamente Expressive estão em evolução e alguns exigem dependências preview; este exemplo não ativa APIs de preview por padrão. Use uma versão experimental somente em branch de teste e confirme release notes, opt-ins e suporte à versão Android antes.
+```bash
+gradle -p android assembleDebug
+```
+
+Para compilar apenas uma aplicação:
+
+```bash
+gradle -p android :app:assembleDebug
+gradle -p android :example:assembleDebug
+```
+
+APKs debug gerados:
+
+```text
+android/app/build/outputs/apk/debug/app-debug.apk
+android/example/build/outputs/apk/debug/example-debug.apk
+```
+
+Não há chaves de assinatura ou segredos no projeto. Para distribuição, configure uma assinatura de release fora do controle de versão.
+
+## Notas de API
+
+O projeto não habilita APIs Compose/Material 3 alpha ou preview. O tema, as cores dinâmicas e os componentes usados são APIs estáveis da dependência `androidx.compose.material3:material3:1.4.0`. Teste contraste, leitor de tela, foco e áreas de toque no produto final, especialmente com paletas dinâmicas de usuários.

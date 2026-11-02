@@ -9,3 +9,7 @@ dist/
 local.properties
 .env
 .env.*
+
+release-assets/
+__pycache__/
+*.pyc
