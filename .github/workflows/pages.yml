@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install --prefix web
+      - run: npm ci --prefix web
       - run: npm run build --prefix web
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
