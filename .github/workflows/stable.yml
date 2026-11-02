@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install playwright && python -m playwright install --with-deps chromium
-      - run: cd web && python tests/test_web.py
+      - run: cd web && python tests/test_web.py && python tests/test_gallery.py
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
