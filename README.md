@@ -16,6 +16,8 @@ A imagem abaixo é uma captura real da demo publicada — não é um mockup de a
 
 - **Demo web construída com Vite**: tema claro/escuro, esquema dinâmico com Material Color Utilities oficial, seleção de cor ou imagem local processada no navegador, componentes interativos e layout responsivo.
 - **Tokens compartilháveis** em CSS custom properties para cor, tipografia, forma e elevação.
+- **Interface localizada em português, inglês e espanhol**: seleção automática pelo idioma do navegador/sistema, opção manual e preferência salva localmente; sem enviar textos para tradutores externos.
+- **Exemplo de animação spring** no Compose, inspirado no feedback tátil do Prismal, inspirado no feedback tátil do [Prismal](https://github.com/styropyr0/Prismal), sem incluir sua dependência OpenGL de captura/renderização de fundo.
 - **Exemplo Android em Kotlin + Jetpack Compose Material 3 1.4.0 estável**, Dynamic Color no Android 12+ e fallback em versões anteriores.
 - **Referências e guia em português** para adaptar ao seu produto sem copiar marcas ou telas do Google.
 - **GitHub Pages + CI Android**: workflows publicam a web e compilam um APK debug em artifact nas mudanças correspondentes.
@@ -63,11 +65,15 @@ Os tokens seguem os papéis de cor do Material; a demo usa a biblioteca Material
 
 ## Usar no Android
 
-Abra a pasta `android/` no Android Studio. O app de exemplo usa Jetpack Compose e `androidx.compose.material3:material3:1.4.0`. Consulte [android/README.md](android/README.md) e [docs/TERMUX_AI.md](docs/TERMUX_AI.md). O workflow Android compila um APK debug e publica-o como artefato em cada alteração à pasta Android.
+Abra a pasta `android/` no Android Studio. O app de exemplo usa Jetpack Compose e `androidx.compose.material3:material3:1.4.0`. Consulte [android/README.md](android/README.md), [docs/IDIOMAS.md](docs/IDIOMAS.md) e [docs/TERMUX_AI.md](docs/TERMUX_AI.md). O workflow Android compila um APK debug e publica-o como artefato em cada alteração à pasta Android.
 
 - Em Android 12/API 31+, `dynamicColor = true` usa a paleta do sistema baseada no papel de parede.
 - Em versões anteriores, ou se desativado, usa uma paleta de fallback incluída no exemplo.
 - Os componentes Compose usam os papéis de `MaterialTheme.colorScheme`.
+
+## Idiomas e localização
+
+A tradução demonstrativa fica organizada em [web/i18n.js](web/i18n.js) na web e [AppTranslations.kt](android/app/src/main/java/dev/saynoob/materialyou/AppTranslations.kt) no Compose. No primeiro uso, a interface segue o idioma do navegador ou dispositivo, com fallback em português; o seletor deixa escolher o idioma e memoriza a escolha localmente. Não é tradução de conteúdo livre por IA nem usa uma API online. Consulte o [guia de idiomas](docs/IDIOMAS.md) para adicionar outras línguas.
 
 ## Personalização e acessibilidade
 
@@ -83,6 +89,7 @@ O guia [Termux + IA](docs/TERMUX_AI.md) mostra como editar, validar e enviar mud
 ## Guias incluídos
 
 - [Catálogo de componentes, recursos e limites](docs/COMPONENTES.md)
+- [Idiomas e localização](docs/IDIOMAS.md)
 - [Termux + IA para programar com segurança](docs/TERMUX_AI.md)
 - [Instruções para agentes de código](AGENTS.md)
 

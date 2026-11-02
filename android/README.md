@@ -1,6 +1,6 @@
 # Exemplo Android nativo
 
-App de demonstração em Kotlin + Jetpack Compose Material 3, com tema do sistema, paleta dinâmica do papel de parede (Android 12/API 31+) e fallback em versões anteriores. Há uma tela funcional com navegação inferior, filtros, Slider, Switch, cartões, progress indicator, snackbar e diálogo.
+App de demonstração em Kotlin + Jetpack Compose Material 3, com tema do sistema, paleta dinâmica do papel de parede (Android 12/API 31+) e fallback em versões anteriores. Há uma tela funcional com navegação inferior, filtros, Slider, Switch, cartões, indicador de progresso, snackbar, diálogo e uma animação spring de pressão no cartão. O idioma é escolhido automaticamente pelo sistema (português, inglês ou espanhol) e pode ser alterado em Personalizar → Idioma do app; a escolha manual fica salva localmente. As strings do exemplo ficam organizadas em `app/src/main/java/dev/saynoob/materialyou/AppTranslations.kt`; veja também [o guia de idiomas](../docs/IDIOMAS.md).
 
 ## Compilar
 
