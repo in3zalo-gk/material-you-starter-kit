@@ -1,21 +1,36 @@
-# Cobertura do Material 3 neste starter
+# Cobertura do Material 3 · 1.0.2
 
-O Material 3 é um sistema completo, não um tema que se liga com uma opção. Este repositório implementa uma amostra prática e aponta como ampliar. A lista de componentes e estágio de suporte mudam com as versões de cada plataforma.
+Este starter não é uma implementação completa de Material 3/Expressive. A cobertura é explícita por camada.
 
-## Incluído no kit
-- Papéis semânticos de cor: esquema claro/escuro e paletas criadas pela biblioteca oficial Material Color Utilities para a web; Dynamic Color nativo no Android 12+.
-- Forma: tokens de cantos, cards, chips e uma amostra de morph decorativo (web e Compose).
-- Tipografia: escala padrão do Material 3; personalize escala, pesos e hierarquia para a identidade do produto.
-- Superfícies, botões, chips/filtros, switches, slider, progresso, FAB, navegação e diálogo/snackbar de exemplo.
-- Seleção conectada: fundo preenchido que desliza entre botões na web e no Android (Explorar), com ripple na posição do ponteiro na web e ripple nativo no app. No Android, a animação segue a escala de duração do sistema.
-- Movimento com transições curtas, respeitando `prefers-reduced-motion` na web. A galeria web inclui prévias de painel/lista/detalhe com dados explicitamente fictícios, seleção compartilhada entre botões, transições manuais (fade, deslizar e escala), replay, duração configurável e elevação de 0 a 5.
-- Layout adaptável: navegação lateral em telas maiores e inferior em telas pequenas (web responsiva); no Android, Scaffold e NavigationBar.
-- Acessibilidade: rótulos semânticos, estado de botões, foco e respeito a movimento reduzido — ainda exige teste humano com leitor de tela e contraste.
+| Recurso | Web | Android |
+|---|---|---|
+| Cor e tema | Material Color Utilities, seed/imagem local, claro/escuro | Compose Material3 1.4.0, Dynamic Color API 31+, fallback |
+| Botões, ícones, FAB | Catálogo oficial, variantes e estados | Controles nativos do showcase |
+| Chips, checkbox, switch, radio, slider | Componentes oficiais com estado local | Controles de exemplo do app |
+| Campos e seletores | Filled/outlined text field e select; field primitivos | OutlinedTextField e menu de prioridade |
+| Listas, divisores, abas | List/item, divider, primary/secondary tabs | ListItem, HorizontalDivider, PrimaryTabRow |
+| Menu e submenu | Menu ancorado e submenu demonstrativos | DropdownMenu |
+| Diálogo | Oficial no catálogo; HTML no laboratório | AlertDialog e DatePickerDialog |
+| DatePicker, TimePicker | Não incluídos no catálogo estável | Amostras nativas em Explorar |
+| Bottom sheet e tooltip | Não incluídos no catálogo estável | ModalBottomSheet e TooltipBox |
+| Progresso, elevação, foco, ripple | Componentes oficiais e exemplos CSS autorais | Recursos nativos nos controles |
+| Seleção conectada | Animação de fundo e ripple na galeria | Demo nativa, escala de animação do sistema |
+| Idiomas | Laboratório pt/en/es; catálogo pt | Showcase pt/en/es |
 
-## Recursos que o app real deve acrescentar
-Componentes não estão todos expostos num único showcase. A galeria é uma demonstração visual local: não representa navegação de aplicativo, dados reais, persistência, gestos complexos ou implementação oficial do Material Web. Conforme o produto pedir, integre menus, campos de texto, date/time pickers, search, bottom sheets, listas, tabs, tooltips, loading indicators, navegação adaptativa, layouts para tablet/foldable e componentes Expressive atuais. Consulte as referências oficiais e a versão da biblioteca antes de implementar; algumas APIs têm estágio experimental.
+O catálogo integra os **43 módulos** exportados por `@material/web@2.5.0/all.js`, incluindo containers e primitivos, não 43 famílias independentes. Imports individuais evitam carregar o catálogo inteiro nos exemplos menores. Veja [integração](MATERIAL_WEB.md).
 
-Na web, Material Web está em manutenção segundo o próprio site da biblioteca. Este starter usa CSS semântico próprio + Material Color Utilities oficial para esquemas de cor; é uma opção de implementação, não uma substituição oficial completa de Material Web. O kit não lê a paleta do wallpaper do Android em uma página web; o usuário escolhe uma cor/imagem explicitamente.
+## Recursos preservados
 
-## Termux: pedir uma alteração a um agente
-Na raiz do repo, use o prompt em `AGENTS.md` como instruções do projeto. Peça tarefas específicas, por exemplo: “Implemente um DatePicker acessível no exemplo Android usando a versão estável disponível, atualize a documentação e rode `gradle -p android assembleDebug`. Não altere dependências fora do necessário.” Revise o diff, não forneça tokens e não aceite comandos que apaguem dados sem entender.
+Tokens semânticos, cores locais por imagem, exportação de tokens, morph, galeria painel/lista/detalhe, fade/deslizar/escala com replay e duração, elevação de 0 a 5, layout responsivo, preferências de tema/idioma e exemplos mínimos.
+
+## Limites reais
+
+Dados são fictícios. Não há backend, login, pagamentos, agendamento, exportação real por menus ou persistência de negócio. Estados do novo showcase Android usam rememberSaveable para recriação da Activity, não banco de dados. Fontes de ícones externas não são necessárias ao catálogo.
+
+Material Web está em manutenção. O fork é uma referência separada, não uma biblioteca oficial nova deste projeto. O kit não lê o wallpaper Android a partir do navegador. Busca de negócio, navigation rail/bar oficiais web, layouts foldable, gestos complexos e componentes Expressive adicionais precisam de trabalho específico.
+
+APIs de showcase Android podem exigir opt-in experimental explícito mesmo com dependência estável. Testes automatizados não substituem TalkBack, leitor de tela, contraste, foco, tamanhos de toque e dispositivos reais. Movimento reduzido é respeitado no laboratório e seleção conectada; o catálogo oculta o spinner indeterminado nesse modo, mas componentes oficiais mantêm o comportamento de sua biblioteca.
+
+## Termux e agentes
+
+Leia `AGENTS.md` antes de alterações. Peça uma tarefa específica, confira o diff e execute os testes. Não forneça tokens ou chaves a prompts.

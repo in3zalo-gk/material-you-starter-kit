@@ -12,6 +12,8 @@ Para acrescentar uma língua:
 2. Inclua a opção no seletor `#languageSelect` do `web/index.html`.
 3. Acrescente a regra de detecção em `detectLanguage()` e teste tudo com build Vite e leitor de tela.
 
+O catálogo `catalog.html` e o exemplo `examples/material-web.html` novos na 1.0.2 estão em português, sem seletor de idioma. O laboratório principal continua pt/en/es.
+
 ## Android
 
 O exemplo Compose guarda as traduções da interface em `AppTranslations.kt` e usa idioma do sistema como padrão, com fallback para português. A página **Personalizar → Idioma do app** permite escolher Automático, Português, English ou Español; uma seleção manual é persistida localmente no app. O controle é independente do idioma do sistema e a preferência é privada ao app.

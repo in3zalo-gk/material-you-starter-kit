@@ -1,7 +1,7 @@
 {
   "name": "material-you-starter-web",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +9,8 @@
     "test:e2e": "python3 tests/test_web.py"
   },
   "dependencies": {
-    "@material/material-color-utilities": "0.4.0"
+    "@material/material-color-utilities": "0.4.0",
+    "@material/web": "2.5.0"
   },
   "devDependencies": {
     "vite": "6.4.5"

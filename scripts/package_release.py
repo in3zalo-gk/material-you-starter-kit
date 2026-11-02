@@ -1,4 +1,4 @@
-"""Create redistributable 1.0.1 packages. Run after web and Android builds."""
+"""Create redistributable 1.0.2 packages. Run after web and Android builds."""
 from pathlib import Path
 import hashlib
 import shutil
@@ -7,7 +7,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'release-assets'
 OUT.mkdir(exist_ok=True)
-VERSION = '1.0.1'
+VERSION = '1.0.2'
 EXCLUDED = {'.git', 'node_modules', 'build', '.gradle', '__pycache__', 'dist', 'release-assets'}
 
 def source_files(folder):
@@ -19,16 +19,17 @@ def archive(name, files):
             z.write(p, str(p.relative_to(ROOT)))
 
 license = ROOT / 'LICENSE'
-archive(f'm3-kit-{VERSION}-opensource-complete.zip', [license, ROOT/'README.md', ROOT/'CHANGELOG.md'] + sum([source_files(f) for f in ['web', 'android', 'docs', 'assets', 'scripts', '.github']], []))
-archive(f'm3-kit-{VERSION}-web-source.zip', [license, ROOT/'README.md'] + source_files('web'))
+archive(f'm3-kit-{VERSION}-opensource-complete.zip', [license, ROOT/'README.md', ROOT/'CHANGELOG.md', ROOT/'THIRD_PARTY_NOTICES.md', ROOT/'AGENTS.md'] + sum([source_files(f) for f in ['web', 'android', 'docs', 'assets', 'scripts', '.github']], []))
+archive(f'm3-kit-{VERSION}-web-source.zip', [license, ROOT/'README.md', ROOT/'THIRD_PARTY_NOTICES.md'] + source_files('web'))
 archive(f'm3-kit-{VERSION}-android-source.zip', [license, ROOT/'android/README.md'] + source_files('android'))
-archive(f'm3-kit-{VERSION}-web-example.zip', [license, ROOT/'docs/EXAMPLES.md'] + source_files('web'))
+archive(f'm3-kit-{VERSION}-web-example.zip', [license, ROOT/'docs/EXAMPLES.md', ROOT/'THIRD_PARTY_NOTICES.md'] + source_files('web'))
 archive(f'm3-kit-{VERSION}-android-example.zip', [license, ROOT/'android/README.md', ROOT/'android/settings.gradle.kts', ROOT/'android/build.gradle.kts', ROOT/'android/gradle.properties'] + source_files('android/gradle') + source_files('android/example') + source_files('android/app'))
 # The example source includes app as settings references both modules; both builds work unchanged.
 with zipfile.ZipFile(OUT/f'm3-kit-{VERSION}-web-ready.zip', 'w', zipfile.ZIP_DEFLATED) as z:
     for p in (ROOT/'web/dist').rglob('*'):
         if p.is_file(): z.write(p, str(p.relative_to(ROOT/'web/dist')))
     z.write(license, 'LICENSE')
+
 for module, label in [('app','complete'),('example','example')]:
     apk = ROOT/f'android/{module}/build/outputs/apk/debug/{module}-debug.apk'
     if not apk.exists(): raise SystemExit(f'Missing built APK: {apk}')
