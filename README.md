@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/logo.svg" width="120" alt="m3 kit logo"></p>
 
-# m3 kit · 1.0.0
+# m3 kit · 1.0.1
 
 Material 3 para web e Android, com uma identidade própria. Código aberto, licença MIT. O pacote completo também é open source: não existe edição paga ou proprietária escondida.
 
@@ -21,7 +21,7 @@ Material 3 para web e Android, com uma identidade própria. Código aberto, lice
 
 ![Ilustração animada da seleção conectada: o fundo colorido acompanha o botão escolhido](assets/connected-selection.svg)
 
-[Experimentar a galeria web](https://in3zalo-gk.github.io/material-you-starter-kit/#galeria). No Android, abra **Explorar → Seleção conectada**. A imagem acima ilustra o movimento; a interação real está na demo web e no código Android. O novo exemplo nativo está no código atual e não altera os APKs já publicados na v1.0.0.
+[Experimentar a galeria web](https://in3zalo-gk.github.io/material-you-starter-kit/#galeria). No Android, abra **Explorar → Seleção conectada**. A imagem acima ilustra o movimento; a interação real está na demo web e no código Android. A versão 1.0.1 inclui o novo exemplo no APK completo; os arquivos da 1.0.0 permanecem inalterados.
 
 ## Downloads
 
@@ -54,7 +54,7 @@ gradle -p android assembleDebug lintDebug
 
 ## Escopo estável
 
-1.0.0 estabiliza este **starter demonstrativo**, não todo o catálogo Material 3 nem um backend. Sem login, pagamentos, serviços remotos ou garantias de conformidade automática. Testes automatizados não substituem testes reais com TalkBack, dispositivos e seu conteúdo.
+1.0.1 atualiza este **starter demonstrativo**, não todo o catálogo Material 3 nem um backend. Sem login, pagamentos, serviços remotos ou garantias de conformidade automática. Testes automatizados não substituem testes reais com TalkBack, dispositivos e seu conteúdo.
 
 Projeto independente, sem afiliação ou endosso da Google. Web usa CSS próprio e a biblioteca oficial Material Color Utilities; Android usa Compose Material 3. Algumas APIs de UI do Android exigem opt-in experimental, apesar de a dependência Material3 ser estável.
 

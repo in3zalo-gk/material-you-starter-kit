@@ -1,4 +1,4 @@
-"""Create redistributable 1.0.0 packages. Run after web and Android builds."""
+"""Create redistributable 1.0.1 packages. Run after web and Android builds."""
 from pathlib import Path
 import hashlib
 import shutil
@@ -7,7 +7,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'release-assets'
 OUT.mkdir(exist_ok=True)
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 EXCLUDED = {'.git', 'node_modules', 'build', '.gradle', '__pycache__', 'dist', 'release-assets'}
 
 def source_files(folder):
@@ -22,7 +22,7 @@ license = ROOT / 'LICENSE'
 archive(f'm3-kit-{VERSION}-opensource-complete.zip', [license, ROOT/'README.md', ROOT/'CHANGELOG.md'] + sum([source_files(f) for f in ['web', 'android', 'docs', 'assets', 'scripts', '.github']], []))
 archive(f'm3-kit-{VERSION}-web-source.zip', [license, ROOT/'README.md'] + source_files('web'))
 archive(f'm3-kit-{VERSION}-android-source.zip', [license, ROOT/'android/README.md'] + source_files('android'))
-archive(f'm3-kit-{VERSION}-web-example.zip', [license, ROOT/'docs/EXAMPLES.md', ROOT/'web/examples/minimal.html', ROOT/'web/tokens.css', ROOT/'web/material-you.css', ROOT/'web/package.json', ROOT/'web/package-lock.json', ROOT/'web/vite.config.js', ROOT/'web/index.html', ROOT/'web/app.js', ROOT/'web/i18n.js'])
+archive(f'm3-kit-{VERSION}-web-example.zip', [license, ROOT/'docs/EXAMPLES.md'] + source_files('web'))
 archive(f'm3-kit-{VERSION}-android-example.zip', [license, ROOT/'android/README.md', ROOT/'android/settings.gradle.kts', ROOT/'android/build.gradle.kts', ROOT/'android/gradle.properties'] + source_files('android/gradle') + source_files('android/example') + source_files('android/app'))
 # The example source includes app as settings references both modules; both builds work unchanged.
 with zipfile.ZipFile(OUT/f'm3-kit-{VERSION}-web-ready.zip', 'w', zipfile.ZIP_DEFLATED) as z:
