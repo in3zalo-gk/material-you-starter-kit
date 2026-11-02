@@ -19,6 +19,17 @@ jobs:
           node-version: '22'
           cache: npm
           cache-dependency-path: web/package-lock.json
+      - name: Synchronize lockfile release metadata
+        shell: bash
+        run: |
+          node --input-type=module -e 'import fs from "node:fs"; const p="web/package-lock.json"; const lock=JSON.parse(fs.readFileSync(p)); const version=JSON.parse(fs.readFileSync("web/package.json")).version; lock.version=version; lock.packages[""].version=version; fs.writeFileSync(p,JSON.stringify(lock,null,2)+"\n");'
+          if ! git diff --quiet -- web/package-lock.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add web/package-lock.json
+            git commit -m 'Sync 1.0.1 lockfile metadata [skip ci]'
+            git push origin HEAD:main
+          fi
       - run: npm ci --prefix web
       - run: npm audit --prefix web --audit-level=high
       - run: npm run build --prefix web
@@ -52,5 +63,5 @@ jobs:
           if gh release view v1.0.1 >/dev/null 2>&1; then
             echo 'v1.0.1 already exists; keeping immutable published assets.'
           else
-            gh release create v1.0.1 release-assets/* --target "$GITHUB_SHA" --title 'm3 kit 1.0.1 — Stable' --notes-file docs/RELEASE-1.0.1.md --latest
+            gh release create v1.0.1 release-assets/* --target "$(git rev-parse HEAD)" --title 'm3 kit 1.0.1 — Stable' --notes-file docs/RELEASE-1.0.1.md --latest
           fi
