@@ -196,6 +196,7 @@ item { Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colo
 Column(Modifier.fillMaxWidth().padding(24.dp)) { T("Feito para o sistema", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onPrimaryContainer); Spacer(Modifier.height(8.dp)); T("No Android 12+, a cor dinâmica pode seguir o papel de parede. Em outras versões, os papéis semânticos continuam consistentes.", color = MaterialTheme.colorScheme.onPrimaryContainer); Spacer(Modifier.height(14.dp)); Button(onClick = onExampleAction) { T("Testar ação") } }
 } }
 item { ConnectedSelectionDemo(selectedFilter = selectedFilter, onFilterChange = onFilterChange) }
+item { ComponentShowcase() }
 item { T("Filtros", style = MaterialTheme.typography.titleLarge) }
 item { Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) { listOf("Todos", "Design", "Android").forEach { label -> FilterChip(selected = selectedFilter == label, onClick = { onFilterChange(label) }, label = { T(label) }) } } }
 item { Card { Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
