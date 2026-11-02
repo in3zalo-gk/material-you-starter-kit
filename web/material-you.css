@@ -3,3 +3,13 @@
 .language-control { display: inline-flex; align-items: center; }
 .language-control select { min-height: 40px; max-width: 138px; padding: 0 30px 0 12px; border: 1px solid var(--md-sys-color-outline, #79747e); border-radius: 20px; color: var(--md-sys-color-on-surface, #1d1b20); background: var(--md-sys-color-surface-container, #f3edf7); font: inherit; }
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+/* Exemplo opt-in, não simula a refração física do Prismal. */
+.glass-stage { position:relative; overflow:hidden; min-height:128px; display:flex; align-items:center; justify-content:center; border-radius:18px; margin:18px 0; background:linear-gradient(125deg,var(--md-sys-color-primary-container),var(--md-sys-color-tertiary-container)); }
+.glass-orb { position:absolute; width:90px; height:90px; border-radius:50%; background:var(--md-sys-color-primary); opacity:.5; }
+.glass-orb.one { left:18%; top:-22px; } .glass-orb.two { right:14%; bottom:-34px; background:var(--md-sys-color-tertiary); }
+.glass-surface { position:relative; z-index:1; padding:15px 20px; width:min(82%,280px); border-radius:18px; background:var(--md-sys-color-surface); color:var(--md-sys-color-on-surface); border:1px solid var(--md-sys-color-outline-variant); box-shadow:0 8px 20px #0002; }
+.glass-surface strong,.glass-surface span { display:block; font-size:12px; } .glass-surface span { margin-top:3px; }
+@supports ((backdrop-filter:blur(12px)) or (-webkit-backdrop-filter:blur(12px))) { .glass-surface { background:color-mix(in srgb,var(--md-sys-color-surface) 85%,transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); } }
+@media (prefers-reduced-transparency:reduce) { .glass-surface { background:var(--md-sys-color-surface); backdrop-filter:none; -webkit-backdrop-filter:none; } }
+@media(max-width:560px){ .top-actions { gap:8px; } .language-control select { max-width:110px; padding-left:8px; } .breadcrumb { white-space:nowrap; } }

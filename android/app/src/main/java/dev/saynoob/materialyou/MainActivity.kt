@@ -212,7 +212,7 @@ private fun PersonalizePage(padding: PaddingValues, languageChoice: String, onLa
                 Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     T("Idioma do app")
                     Box {
-                        OutlinedButton(onClick = { expanded = true }) { T(when (languageChoice) { "en" -> "English"; "es" -> "Español"; else -> "Automático (sistema)" }) }
+                        OutlinedButton(onClick = { expanded = true }) { T(when (languageChoice) { "en" -> "English"; "es" -> "Español"; "pt" -> "Português"; else -> "Automático (sistema)" }) }
                         DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
                             listOf("auto" to "Automático (sistema)", "pt" to "Português", "en" to "English", "es" to "Español").forEach { (value, label) ->
                                 DropdownMenuItem(text = { T(label) }, onClick = { onLanguageChange(value); expanded = false })

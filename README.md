@@ -17,7 +17,7 @@ A imagem abaixo é uma captura real da demo publicada — não é um mockup de a
 - **Demo web construída com Vite**: tema claro/escuro, esquema dinâmico com Material Color Utilities oficial, seleção de cor ou imagem local processada no navegador, componentes interativos e layout responsivo.
 - **Tokens compartilháveis** em CSS custom properties para cor, tipografia, forma e elevação.
 - **Interface localizada em português, inglês e espanhol**: seleção automática pelo idioma do navegador/sistema, opção manual e preferência salva localmente; sem enviar textos para tradutores externos.
-- **Exemplo de animação spring** no Compose, inspirado no feedback tátil do Prismal, inspirado no feedback tátil do [Prismal](https://github.com/styropyr0/Prismal), sem incluir sua dependência OpenGL de captura/renderização de fundo.
+- **Exemplo de animação spring** no Compose, inspirado no feedback tátil do Prismal, inspirado no feedback tátil do [Prismal](https://github.com/styropyr0/Prismal), sem incluir sua dependência OpenGL de captura/renderização de fundo. A web inclui uma amostra de vidro com CSS e fallback opaco; não é refração física nem usa a biblioteca Prismal.
 - **Exemplo Android em Kotlin + Jetpack Compose Material 3 1.4.0 estável**, Dynamic Color no Android 12+ e fallback em versões anteriores.
 - **Referências e guia em português** para adaptar ao seu produto sem copiar marcas ou telas do Google.
 - **GitHub Pages + CI Android**: workflows publicam a web e compilam um APK debug em artifact nas mudanças correspondentes.
