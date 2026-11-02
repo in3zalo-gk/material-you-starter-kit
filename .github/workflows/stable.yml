@@ -1,0 +1,56 @@
+name: Stable build and release
+on:
+  push:
+    branches: [main]
+    paths: ['web/**', 'android/**', 'scripts/**', '.github/workflows/stable.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: stable-release
+  cancel-in-progress: false
+jobs:
+  verify-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci --prefix web
+      - run: npm audit --prefix web --audit-level=high
+      - run: npm run build --prefix web
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright && python -m playwright install --with-deps chromium
+      - run: cd web && python tests/test_web.py
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-36 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.13'
+      - run: gradle -p android assembleDebug lintDebug --stacktrace
+      - run: python scripts/package_release.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m3-kit-1.0.0-verified-packages
+          path: release-assets/*
+          if-no-files-found: error
+      - name: Publish stable only once, after checks
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if gh release view v1.0.0 >/dev/null 2>&1; then
+            echo 'v1.0.0 already exists; keeping immutable published assets.'
+          else
+            gh release create v1.0.0 release-assets/* --target "$GITHUB_SHA" --title 'm3 kit 1.0.0 — Stable' --notes-file docs/RELEASE-1.0.0.md --latest
+          fi
