@@ -19,9 +19,9 @@ Material 3 para web e Android, com uma identidade própria. Código aberto, lice
 
 ## Galeria de interação
 
-![Gravação real da seleção conectada na web: o fundo colorido acompanha o botão clicado](assets/connected-selection.gif)
+![Ilustração animada da seleção conectada: o fundo colorido acompanha o botão escolhido](assets/connected-selection.svg)
 
-[Experimentar a galeria web](https://in3zalo-gk.github.io/material-you-starter-kit/#galeria). No Android, abra **Explorar → Seleção conectada**. O GIF acima é uma captura da web; não simula uma gravação do app. O novo exemplo nativo está no código atual e não altera os APKs já publicados na v1.0.0.
+[Experimentar a galeria web](https://in3zalo-gk.github.io/material-you-starter-kit/#galeria). No Android, abra **Explorar → Seleção conectada**. A imagem acima ilustra o movimento; a interação real está na demo web e no código Android. O novo exemplo nativo está no código atual e não altera os APKs já publicados na v1.0.0.
 
 ## Downloads
 
