@@ -1,7 +1,9 @@
-# Exemplo Android
+# Exemplo Android nativo
 
-App mínimo em Kotlin com Jetpack Compose e Material 3. Abra esta pasta no Android Studio recente com suporte a Gradle 8.9+, JDK 17 e Android SDK 35 instalado. O Gradle Wrapper não está incluído nesta versão inicial; o Android Studio pode configurar o wrapper ao importar ou use `gradle wrapper` com Gradle instalado.
+App de demonstração em Kotlin + Jetpack Compose Material 3, com tema do sistema, paleta dinâmica do papel de parede (Android 12/API 31+) e fallback em versões anteriores. Há uma tela funcional com navegação inferior, filtros, Slider, Switch, cartões, progress indicator, snackbar e diálogo.
 
-Para executar, selecione a configuração `app` e rode em emulador/dispositivo com API 23+. O Dynamic Color usa a paleta do sistema a partir do Android 12 (API 31); nos demais casos aplica o esquema de fallback.
+## Compilar
 
-A versão de `androidx.compose.material3` está definida no `gradle/libs.versions.toml`. Confirme a versão estável atual no [Android Developers](https://developer.android.com/jetpack/androidx/releases/compose-material3) antes de atualizar. APIs Expressive podem mudar; mantenha versões alinhadas com o BOM e valide a compilação ao atualizar.
+Abra `android/` no Android Studio com JDK 17. Este projeto usa Android Gradle Plugin 8.13.0, Gradle 8.11.1+, compileSdk 36, minSdk 23 e Material 3 estável 1.4.0 (consultada em 2026-11-02). Para gerar o APK pelo terminal, com Gradle 8.11.1 instalado: `gradle -p android assembleDebug`. O APK sai em `android/app/build/outputs/apk/debug/app-debug.apk`.
+
+Material 3 1.4.0 estável inclui aprimoramentos do sistema de motion, componentes e suporte dinâmico de cor. Recursos Compose explicitamente Expressive estão em evolução e alguns exigem dependências preview; este exemplo não ativa APIs de preview por padrão. Use uma versão experimental somente em branch de teste e confirme release notes, opt-ins e suporte à versão Android antes.
