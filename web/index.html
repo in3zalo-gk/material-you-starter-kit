@@ -1,39 +1,52 @@
 <!doctype html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#6750a4"><meta name="description" content="Starter kit aberto para experimentar Material 3 Expressive na web e no Android.">
-  <title>Material You Starter — Demo</title><link rel="stylesheet" href="tokens.css"><link rel="stylesheet" href="material-you.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore os componentes, cores e exemplos do Material You Starter Kit para web e Android.">
+  <meta name="theme-color" content="#faf8ff">
+  <title>Material You Starter Kit — Componentes</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="material-you.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-<div class="app-shell">
-  <aside class="sidebar" aria-label="Navegação principal">
-    <div class="brand"><span class="brand-mark" aria-hidden="true">M</span><span>Material You</span></div>
-    <span class="nav-label">Workspace</span>
-    <button class="nav-item active" type="button" aria-current="page">◈ &nbsp; Visão geral</button>
-    <button class="nav-item" type="button" data-toast="A área Projetos é apenas demonstrativa.">▦ &nbsp; Projetos</button>
-    <button class="nav-item" type="button" data-toast="A área Favoritos é apenas demonstrativa.">♡ &nbsp; Favoritos</button>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="layout">
+  <aside class="sidebar" aria-label="Navegação">
+    <a class="brand" href="#inicio"><span class="brand-icon" aria-hidden="true">m</span><span>Material You<br><small>Starter Kit</small></span></a>
+    <p class="sidebar-heading">COMECE POR AQUI</p>
+    <nav class="nav">
+      <a href="#inicio" class="nav-current"><span class="nav-symbol" aria-hidden="true">◫</span> Visão geral</a>
+      <a href="#componentes"><span class="nav-symbol" aria-hidden="true">◈</span> Componentes</a>
+      <a href="#cores"><span class="nav-symbol" aria-hidden="true">◉</span> Cores e tema</a>
+      <a href="#usar"><span class="nav-symbol" aria-hidden="true">⌘</span> Como usar</a>
+    </nav>
+    <div class="sidebar-footer"><span class="dot"></span> Código aberto <span class="footer-separator">·</span> Licença MIT</div>
   </aside>
-  <main class="main">
-    <div class="topbar"><span class="eyebrow">STARTER KIT • DEMO WEB</span><button class="icon-button" id="themeToggle" type="button" aria-label="Alternar tema claro e escuro" title="Alternar tema">☼</button></div>
-    <p class="eyebrow">DESIGN SYSTEM PARA COMEÇAR</p>
-    <h1>Uma interface que<br>se adapta a você.</h1>
-    <p class="subtitle">Experimente fundamentos do Material 3: cores com papéis semânticos, superfícies tonais, formas arredondadas e componentes expressivos.</p>
-    <section class="hero" aria-label="Boas-vindas">
-      <div><h2>Seu próximo projeto começa aqui</h2><p>Um ponto de partida simples para levar uma linguagem visual coerente à web e ao Android.</p><div class="actions"><button class="btn" data-toast="Esse botão é uma demonstração — personalize a ação no seu projeto.">Começar agora</button><button class="btn text" data-toast="Veja os arquivos em web/ e android/.">Ver componentes</button></div></div>
-      <div class="hero-orb" aria-hidden="true">✦</div>
-    </section>
-    <div class="section-heading"><h2>Seus espaços</h2><span class="eyebrow">2 ATIVOS</span></div>
-    <section class="cards" aria-label="Cartões de exemplo">
-      <article class="card"><div class="card-top"><div><h3>Design System</h3><p>Tokens e componentes</p></div><span class="avatar" aria-hidden="true">DS</span></div><div class="progress" role="progressbar" aria-label="Progresso do Design System" aria-valuemin="0" aria-valuemax="100" aria-valuenow="68"><span></span></div><p style="font-size:13px;margin-top:8px">68% concluído</p></article>
-      <article class="card outlined"><div class="card-top"><div><h3>App Android</h3><p>Jetpack Compose + M3</p></div><span class="avatar" aria-hidden="true">A</span></div><div class="actions"><button class="btn tonal" data-toast="O exemplo Android está em android/.">Abrir exemplo</button></div></article>
-    </section>
-    <div class="section-heading"><h2>Componentes em ação</h2></div>
-    <section class="card" aria-label="Componentes demonstrativos"><div class="chips"><button class="chip selected" aria-pressed="true">Todos</button><button class="chip" aria-pressed="false">Design</button><button class="chip" aria-pressed="false">Desenvolvimento</button><button class="chip" aria-pressed="false">Ideias</button></div>
-      <div class="actions"><button class="btn">Botão preenchido</button><button class="btn tonal">Tonal</button><button class="btn text">Texto</button></div>
-      <div class="color-tools"><label for="seedColor">Cor semente para pré-visualização</label><input type="color" id="seedColor" value="#6750a4" aria-label="Escolher cor semente"></div>
-    </section>
-    <p class="subtitle" style="font-size:12px;margin-top:26px">Demonstração original da comunidade. Não afiliada à Google. A aparência final depende das necessidades e dos testes do seu produto.</p>
+  <main id="conteudo" class="main">
+    <header class="topbar"><span class="breadcrumb">Starter Kit <span>/</span> Visão geral</span><div class="top-actions"><a class="top-link" href="https://github.com/in3zalo-gk/material-you-starter-kit">GitHub <span aria-hidden="true">↗</span></a><button class="theme-button" id="themeToggle" type="button" aria-label="Alternar tema"><span id="themeIcon" aria-hidden="true">☾</span></button></div></header>
+    <div class="content" id="inicio">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> WEB + ANDROID</p>
+      <h1>Material You,<br>do seu jeito<span class="title-period">.</span></h1>
+      <p class="intro">Um ponto de partida aberto para criar interfaces com as cores, formas e componentes do Material 3.</p>
+      <div class="hero-actions"><a href="#componentes" class="button filled">Explorar componentes <span aria-hidden="true">↓</span></a><a href="https://github.com/in3zalo-gk/material-you-starter-kit" class="button outlined">Ver no GitHub <span aria-hidden="true">↗</span></a></div>
+      <div class="note"><span class="note-icon" aria-hidden="true">i</span><p>Um projeto independente da comunidade. Não é uma biblioteca oficial da Google.</p></div>
+      <section id="componentes" class="section" aria-labelledby="components-heading">
+        <div class="section-head"><div><p class="section-kicker">01 / BIBLIOTECA</p><h2 id="components-heading">Componentes essenciais</h2><p>Uma amostra dos elementos disponíveis na demonstração web.</p></div><span class="section-badge">Prévia interativa</span></div>
+        <div class="specimen-grid">
+          <article class="specimen"><div class="specimen-head"><div><h3>Botões</h3><p>Diferentes níveis de destaque.</p></div><span class="component-number">01</span></div><div class="specimen-body button-demo"><button class="button filled" type="button" data-message="Você clicou no botão preenchido.">Preenchido</button><button class="button tonal" type="button" data-message="Você clicou no botão tonal.">Tonal</button><button class="button text-button" type="button" data-message="Você clicou no botão de texto.">Texto</button></div><span class="specimen-caption">AÇÕES</span></article>
+          <article class="specimen"><div class="specimen-head"><div><h3>Seleção</h3><p>Opções claras para cada contexto.</p></div><span class="component-number">02</span></div><div class="specimen-body chips-demo" role="group" aria-label="Exemplo de filtros"><button class="chip selected" type="button" aria-pressed="true">Todos</button><button class="chip" type="button" aria-pressed="false">Design</button><button class="chip" type="button" aria-pressed="false">Código</button></div><span class="specimen-caption">CHIPS</span></article>
+          <article class="specimen"><div class="specimen-head"><div><h3>Superfícies</h3><p>Organize conteúdos com hierarquia.</p></div><span class="component-number">03</span></div><div class="specimen-body"><div class="mini-card"><span class="mini-icon" aria-hidden="true">◫</span><div><strong>Cartão de exemplo</strong><span>Uma superfície para seu conteúdo</span></div><span class="mini-arrow" aria-hidden="true">↗</span></div></div><span class="specimen-caption">CARTÕES</span></article>
+          <article class="specimen"><div class="specimen-head"><div><h3>Progresso</h3><p>Mostre o estado de uma tarefa.</p></div><span class="component-number">04</span></div><div class="specimen-body progress-demo"><div class="progress-label"><span>Carregando recursos</span><strong>68%</strong></div><div class="progress" role="progressbar" aria-label="Progresso de exemplo" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"><span></span></div></div><span class="specimen-caption">INDICADORES</span></article>
+        </div>
+      </section>
+      <section id="cores" class="section colors-section" aria-labelledby="colors-heading"><div class="section-head"><div><p class="section-kicker">02 / PERSONALIZAÇÃO</p><h2 id="colors-heading">Cores que fazem sentido</h2><p>Papéis semânticos ajudam a manter uma identidade consistente.</p></div></div><div class="color-panel"><div class="color-copy"><div class="color-label">PALETA DA DEMO</div><h3>Experimente uma cor</h3><p>Escolha uma cor para visualizar os componentes. Esta prévia usa uma aproximação simples, não o algoritmo oficial do Material.</p><label class="color-control" for="seedColor"><input type="color" id="seedColor" value="#6750a4"><span>Escolher cor de destaque</span></label><button class="reset-color" type="button" id="resetColor">Restaurar padrão</button></div><div class="swatches" aria-label="Papéis de cor"><div class="swatch primary"><span>Primary</span><small>Cor de destaque</small></div><div class="swatch primary-container"><span>Primary container</span><small>Superfície tonal</small></div><div class="swatch surface"><span>Surface</span><small>Fundo de conteúdo</small></div><div class="swatch secondary-container"><span>Secondary container</span><small>Ênfase suave</small></div></div></div></section>
+      <section id="usar" class="section" aria-labelledby="usage-heading"><div class="section-head"><div><p class="section-kicker">03 / PRIMEIROS PASSOS</p><h2 id="usage-heading">Comece com o que você usa</h2><p>Código e instruções para cada plataforma estão no repositório.</p></div></div><div class="usage-grid"><a class="usage-card" href="https://github.com/in3zalo-gk/material-you-starter-kit/tree/main/web"><span class="usage-icon" aria-hidden="true">&lt;/&gt;</span><div><strong>Para web</strong><span>CSS, tokens e uma demo sem build.</span></div><span class="usage-arrow" aria-hidden="true">↗</span></a><a class="usage-card" href="https://github.com/in3zalo-gk/material-you-starter-kit/tree/main/android"><span class="usage-icon" aria-hidden="true">▣</span><div><strong>Para Android</strong><span>Exemplo nativo com Jetpack Compose.</span></div><span class="usage-arrow" aria-hidden="true">↗</span></a></div></section>
+      <footer class="page-footer"><div><strong>Material You Starter Kit</strong><span>Um projeto da comunidade, aberto para todo mundo.</span></div><div><a href="https://m3.material.io/">Material Design ↗</a><a href="https://github.com/in3zalo-gk/material-you-starter-kit">GitHub ↗</a></div></footer>
+    </div>
   </main>
-</div><div class="toast" id="toast" role="status" aria-live="polite"></div><script src="app.js"></script>
-</body></html>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
