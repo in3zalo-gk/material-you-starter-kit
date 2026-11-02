@@ -7,6 +7,10 @@ O diretório contém duas aplicações Compose independentes, ambas usando **Mat
 
 As escolhas de tema do app principal usam `SharedPreferences`; estados de navegação e controles usam `rememberSaveable`, portanto são recuperados em recriação de Activity, como rotação. O exemplo mínimo mantém apenas o controle temporário de Dynamic Color durante recriações.
 
+## Showcase 1.0.2
+
+Em **Explorar**, depois da seleção conectada, há abas de formulário/lista, campos de texto, menu de prioridade, DatePicker, TimePicker, modal bottom sheet e tooltips. Estados são locais em memória com `rememberSaveable` para recriação da Activity, não persistência de negócio nem agendamento real.
+
 ## Compilar
 
 Abra **`android/`** no Android Studio com **JDK 17** e SDK Platform 36 instalado. Pelo terminal, na raiz do repositório, use uma instalação local do Gradle 8.13 ou compatível:
@@ -33,4 +37,4 @@ Não há chaves de assinatura ou segredos no projeto. Para distribuição, confi
 
 ## Notas de API
 
-O projeto não habilita APIs Compose/Material 3 alpha ou preview. O tema, as cores dinâmicas e os componentes usados são APIs estáveis da dependência `androidx.compose.material3:material3:1.4.0`. Teste contraste, leitor de tela, foco e áreas de toque no produto final, especialmente com paletas dinâmicas de usuários.
+A dependência `androidx.compose.material3:material3:1.4.0` é estável. Algumas APIs de showcase, como pickers, bottom sheet e tooltips, exigem `@OptIn(ExperimentalMaterial3Api::class)` explícito. Não são dependências alpha/preview. Teste contraste, leitor de tela, foco e áreas de toque no produto final, especialmente com paletas dinâmicas de usuários.
