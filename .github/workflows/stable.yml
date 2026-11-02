@@ -41,7 +41,7 @@ jobs:
       - run: python scripts/package_release.py
       - uses: actions/upload-artifact@v4
         with:
-          name: m3-kit-1.0.0-verified-packages
+          name: m3-kit-1.0.1-verified-packages
           path: release-assets/*
           if-no-files-found: error
       - name: Publish stable only once, after checks
@@ -49,8 +49,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          if gh release view v1.0.0 >/dev/null 2>&1; then
-            echo 'v1.0.0 already exists; keeping immutable published assets.'
+          if gh release view v1.0.1 >/dev/null 2>&1; then
+            echo 'v1.0.1 already exists; keeping immutable published assets.'
           else
-            gh release create v1.0.0 release-assets/* --target "$GITHUB_SHA" --title 'm3 kit 1.0.0 — Stable' --notes-file docs/RELEASE-1.0.0.md --latest
+            gh release create v1.0.1 release-assets/* --target "$GITHUB_SHA" --title 'm3 kit 1.0.1 — Stable' --notes-file docs/RELEASE-1.0.1.md --latest
           fi
