@@ -70,7 +70,8 @@ class WebDemoTests(unittest.TestCase):
         self.assertIn('ao menos dois', self.page.locator('#draftError').inner_text())
         self.page.locator('#draftName').fill('Kit')
         self.page.locator('#confirmDialog').click()
-        self.assertTrue('is-visible' in (self.page.locator('#toast').get_attribute('class') or ''))
+        self.page.wait_for_selector('#toast.is-visible', state='visible')
+        self.assertFalse(self.page.locator('#exampleDialog').evaluate('el => el.open'))
 
     def test_mobile_has_no_overflow_or_script_errors(self):
         errors = []
