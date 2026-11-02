@@ -1,0 +1,35 @@
+(() => {
+  const root = document.documentElement;
+  const toggle = document.querySelector('#themeToggle');
+  const toast = document.querySelector('#toast');
+  const colorInput = document.querySelector('#seedColor');
+  let toastTimer;
+  const savedTheme = localStorage.getItem('m3-demo-theme');
+  if (savedTheme === 'dark' || savedTheme === 'light') root.dataset.theme = savedTheme;
+  const updateToggle = () => { toggle.textContent = root.dataset.theme === 'dark' ? '☾' : '☼'; toggle.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'); };
+  updateToggle();
+  toggle.addEventListener('click', () => { root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; localStorage.setItem('m3-demo-theme', root.dataset.theme); updateToggle(); });
+  const showToast = (message) => { toast.textContent = message; toast.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 2300); };
+  document.querySelectorAll('[data-toast]').forEach((button) => button.addEventListener('click', () => showToast(button.dataset.toast)));
+  document.querySelectorAll('.chip').forEach((chip) => chip.addEventListener('click', () => { document.querySelectorAll('.chip').forEach((c) => { c.classList.remove('selected'); c.setAttribute('aria-pressed', 'false'); }); chip.classList.add('selected'); chip.setAttribute('aria-pressed', 'true'); }));
+  colorInput.addEventListener('input', () => {
+    const hex = colorInput.value.slice(1);
+    const [r,g,b] = [0,2,4].map(i => parseInt(hex.slice(i,i+2),16)/255);
+    const lin = x => x <= .04045 ? x/12.92 : ((x+.055)/1.055)**2.4;
+    const [R,G,B] = [r,g,b].map(lin);
+    const l = .2126*R + .7152*G + .0722*B;
+    const hsl = (() => { const max=Math.max(r,g,b), min=Math.min(r,g,b), d=max-min; let h=0,s=0; const v=(max+min)/2; if(d){s=d/(1-Math.abs(2*v-1)); if(max===r)h=((g-b)/d)%6; else if(max===g)h=(b-r)/d+2; else h=(r-g)/d+4; h=Math.round(h*60);if(h<0)h+=360;}return [h,Math.round(s*100),Math.round(v*100)]; })();
+    const [h,s,v] = hsl;
+    const tint = (lightness, saturation=Math.min(90,Math.max(25,s))) => `hsl(${h} ${saturation}% ${lightness}%)`;
+    const dark = root.dataset.theme === 'dark';
+    root.style.setProperty('--md-sys-color-primary', dark ? tint(Math.max(72,v)) : colorInput.value);
+    root.style.setProperty('--md-sys-color-on-primary', dark ? tint(18) : '#ffffff');
+    root.style.setProperty('--md-sys-color-primary-container', dark ? tint(32) : tint(92, Math.min(70,Math.max(35,s))));
+    root.style.setProperty('--md-sys-color-on-primary-container', dark ? tint(92) : tint(20));
+    root.style.setProperty('--md-sys-color-secondary-container', dark ? tint(28,Math.max(20,s*.55)) : tint(92,Math.max(18,s*.35)));
+    root.style.setProperty('--md-sys-color-on-secondary-container', dark ? tint(90) : tint(20));
+    root.style.setProperty('--md-sys-color-tertiary-container', dark ? `hsl(${(h+65)%360} 55% 30%)` : `hsl(${(h+65)%360} 75% 90%)`);
+    root.style.setProperty('--md-sys-color-on-tertiary-container', dark ? `hsl(${(h+65)%360} 80% 92%)` : `hsl(${(h+65)%360} 45% 20%)`);
+    document.querySelector('meta[name="theme-color"]').content = colorInput.value;
+  });
+})();

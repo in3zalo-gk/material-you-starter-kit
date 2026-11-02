@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6750a4"><meta name="description" content="Starter kit aberto para experimentar Material 3 Expressive na web e no Android.">
+  <title>Material You Starter — Demo</title><link rel="stylesheet" href="tokens.css"><link rel="stylesheet" href="material-you.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Navegação principal">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">M</span><span>Material You</span></div>
+    <span class="nav-label">Workspace</span>
+    <button class="nav-item active" type="button" aria-current="page">◈ &nbsp; Visão geral</button>
+    <button class="nav-item" type="button" data-toast="A área Projetos é apenas demonstrativa.">▦ &nbsp; Projetos</button>
+    <button class="nav-item" type="button" data-toast="A área Favoritos é apenas demonstrativa.">♡ &nbsp; Favoritos</button>
+  </aside>
+  <main class="main">
+    <div class="topbar"><span class="eyebrow">STARTER KIT • DEMO WEB</span><button class="icon-button" id="themeToggle" type="button" aria-label="Alternar tema claro e escuro" title="Alternar tema">☼</button></div>
+    <p class="eyebrow">DESIGN SYSTEM PARA COMEÇAR</p>
+    <h1>Uma interface que<br>se adapta a você.</h1>
+    <p class="subtitle">Experimente fundamentos do Material 3: cores com papéis semânticos, superfícies tonais, formas arredondadas e componentes expressivos.</p>
+    <section class="hero" aria-label="Boas-vindas">
+      <div><h2>Seu próximo projeto começa aqui</h2><p>Um ponto de partida simples para levar uma linguagem visual coerente à web e ao Android.</p><div class="actions"><button class="btn" data-toast="Esse botão é uma demonstração — personalize a ação no seu projeto.">Começar agora</button><button class="btn text" data-toast="Veja os arquivos em web/ e android/.">Ver componentes</button></div></div>
+      <div class="hero-orb" aria-hidden="true">✦</div>
+    </section>
+    <div class="section-heading"><h2>Seus espaços</h2><span class="eyebrow">2 ATIVOS</span></div>
+    <section class="cards" aria-label="Cartões de exemplo">
+      <article class="card"><div class="card-top"><div><h3>Design System</h3><p>Tokens e componentes</p></div><span class="avatar" aria-hidden="true">DS</span></div><div class="progress" role="progressbar" aria-label="Progresso do Design System" aria-valuemin="0" aria-valuemax="100" aria-valuenow="68"><span></span></div><p style="font-size:13px;margin-top:8px">68% concluído</p></article>
+      <article class="card outlined"><div class="card-top"><div><h3>App Android</h3><p>Jetpack Compose + M3</p></div><span class="avatar" aria-hidden="true">A</span></div><div class="actions"><button class="btn tonal" data-toast="O exemplo Android está em android/.">Abrir exemplo</button></div></article>
+    </section>
+    <div class="section-heading"><h2>Componentes em ação</h2></div>
+    <section class="card" aria-label="Componentes demonstrativos"><div class="chips"><button class="chip selected" aria-pressed="true">Todos</button><button class="chip" aria-pressed="false">Design</button><button class="chip" aria-pressed="false">Desenvolvimento</button><button class="chip" aria-pressed="false">Ideias</button></div>
+      <div class="actions"><button class="btn">Botão preenchido</button><button class="btn tonal">Tonal</button><button class="btn text">Texto</button></div>
+      <div class="color-tools"><label for="seedColor">Cor semente para pré-visualização</label><input type="color" id="seedColor" value="#6750a4" aria-label="Escolher cor semente"></div>
+    </section>
+    <p class="subtitle" style="font-size:12px;margin-top:26px">Demonstração original da comunidade. Não afiliada à Google. A aparência final depende das necessidades e dos testes do seu produto.</p>
+  </main>
+</div><div class="toast" id="toast" role="status" aria-live="polite"></div><script src="app.js"></script>
+</body></html>
