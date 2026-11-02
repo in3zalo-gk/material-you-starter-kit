@@ -4,12 +4,17 @@ Kit open source para começar interfaces inspiradas no **Material 3 (M3)** e no 
 
 > Material 3 Expressive é uma evolução do Material 3, não uma nova versão separada. Este repositório é um starter independente e **não é afiliado, mantido ou endossado pela Google**. Ele demonstra princípios e componentes; não redistribui o sistema proprietário de apps Google.
 
-<p align="center"><img src="assets/web-preview.svg" alt="Prévia ilustrativa do painel web M3 Starter" width="720"></p>
-<p align="center"><img src="assets/android-preview.svg" alt="Prévia ilustrativa do exemplo Android M3 Starter" width="360"></p>
+## Prévia da interface web
+
+A imagem abaixo é uma captura real da demo publicada — não é um mockup de app Android. O layout se adapta a telas menores e oferece tema claro e escuro.
+
+<p align="center"><img src="assets/web-preview.png" alt="Captura da demo web com componentes Material 3 em tema claro" width="100%"></p>
+
+[**Abrir demonstração web**](https://in3zalo-gk.github.io/material-you-starter-kit/)
 
 ## O que vem incluído
 
-- **Demo web funcional** sem etapa de build: tema claro/escuro, troca de cor de destaque, cartões, chips, botões e navegação responsiva.
+- **Demo web funcional** sem etapa de build: tema claro/escuro, troca de cor de destaque, cartões, chips, botões e navegação responsiva. O seletor gera uma aproximação visual, não uma paleta oficial Material.
 - **Tokens compartilháveis** em CSS custom properties para cor, tipografia, forma e elevação.
 - **Exemplo Android em Kotlin + Jetpack Compose Material 3** com tema claro/escuro, Dynamic Color no Android 12+ e fallback em versões anteriores.
 - **Referências e guia em português** para adaptar ao seu produto sem copiar marcas ou telas do Google.
@@ -71,7 +76,7 @@ Abra a pasta `android/` no Android Studio. O app de exemplo usa Jetpack Compose 
 - [Material Web](https://material-web.dev/) — a documentação informa que a biblioteca está em modo de manutenção; por isso a demo web deste kit usa CSS próprio e não depende dela.
 - [Material Theme Builder](https://material.io/material-theme-builder)
 
-**Inspiração visual:** use as diretrizes e componentes descritos pela Google; as imagens acima são mockups originais deste projeto, não capturas de Gmail, Fotos ou outros produtos Google.
+**Inspiração visual:** use as diretrizes e componentes descritos pela Google; a imagem acima é uma captura da demo web deste projeto, não de Gmail, Fotos ou outros produtos Google. O exemplo Android ainda não possui captura validada.
 
 ## Licença
 
