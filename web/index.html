@@ -3,54 +3,80 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore os componentes, cores e exemplos do Material You Starter Kit para web e Android.">
-  <meta name="theme-color" content="#faf8ff">
+  <meta name="description" content="Kit Material 3 com tokens, temas dinâmicos e exemplos para web e Android.">
+  <meta name="theme-color" content="#f7faf2">
   <meta name="color-scheme" content="light dark">
-  <title>Material You Starter Kit — Componentes</title>
+  <title>m3 kit — Material 3 para web e Android</title>
   <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="material-you.css?v=2">
+  <link rel="stylesheet" href="material-you.css">
   <script type="module" src="./app.js"></script>
 </head>
 <body>
-<a class="skip" href="#conteudo">Pular para o conteúdo</a>
-<div class="layout">
-  <aside class="sidebar" aria-label="Navegação">
-    <a class="brand" href="#inicio"><span class="brand-icon" aria-hidden="true">m</span><span>Material You<br><small>Starter Kit</small></span></a>
-    <p class="sidebar-heading">COMECE POR AQUI</p>
-    <nav class="nav">
-      <a href="#inicio" class="nav-current"><span class="nav-symbol" aria-hidden="true">◫</span> Visão geral</a>
-      <a href="#componentes"><span class="nav-symbol" aria-hidden="true">◈</span> Componentes</a>
-      <a href="#cores"><span class="nav-symbol" aria-hidden="true">◉</span> Cores e tema</a>
-      <a href="#usar"><span class="nav-symbol" aria-hidden="true">⌘</span> Como usar</a>
-    </nav>
-    <div class="sidebar-footer"><span class="dot"></span> Código aberto <span class="footer-separator">·</span> Licença MIT</div>
-  </aside>
-  <main id="conteudo" class="main">
-    <header class="topbar"><span class="breadcrumb">Starter Kit <span>/</span> Visão geral</span><div class="top-actions"><label class="language-control"><span class="sr-only" id="languageLabel">Idioma da interface</span><select id="languageSelect" aria-labelledby="languageLabel"><option value="auto">Automático</option><option value="pt-BR">Português</option><option value="en">English</option><option value="es">Español</option></select></label><a class="top-link" href="https://github.com/in3zalo-gk/material-you-starter-kit">GitHub <span aria-hidden="true">↗</span></a><button class="theme-button" id="themeToggle" type="button" aria-label="Alternar tema"><span id="themeIcon" aria-hidden="true">☾</span></button></div></header>
-    <div class="content" id="inicio">
-      <p class="eyebrow"><span class="eyebrow-dot"></span> WEB + ANDROID</p>
-      <h1>Material You,<br>do seu jeito<span class="title-period">.</span></h1>
-      <p class="intro">Um ponto de partida aberto para criar interfaces com as cores, formas e componentes do Material 3.</p>
-      <div class="hero-actions"><a href="#componentes" class="button filled">Explorar componentes <span aria-hidden="true">↓</span></a><a href="https://github.com/in3zalo-gk/material-you-starter-kit" class="button outlined">Ver no GitHub <span aria-hidden="true">↗</span></a></div>
-      <div class="note"><span class="note-icon" aria-hidden="true">i</span><p>Um projeto independente da comunidade. Não é uma biblioteca oficial da Google.</p></div>
-      <section id="componentes" class="section" aria-labelledby="components-heading">
-        <div class="section-head"><div><p class="section-kicker">01 / BIBLIOTECA</p><h2 id="components-heading">Componentes essenciais</h2><p>Uma amostra dos elementos disponíveis na demonstração web.</p></div><span class="section-badge">Prévia interativa</span></div>
-        <div class="specimen-grid">
-          <article class="specimen"><div class="specimen-head"><div><h3>Controles</h3><p>Seletores acessíveis com resposta imediata.</p></div><span class="component-number">05</span></div><div class="specimen-body controls-demo"><label class="control-line"><span>Notificações</span><input type="checkbox" class="switch" checked aria-label="Ativar notificações"></label><label class="control-line"><span>Intensidade</span><input type="range" min="0" max="100" value="64" aria-label="Intensidade"></label></div><span class="specimen-caption">SWITCHES + SLIDERS</span></article>
-          <article class="specimen"><div class="specimen-head"><div><h3>Forma e movimento</h3><p>Uma demonstração discreta de interação.</p></div><span class="component-number">06</span></div><div class="specimen-body motion-demo"><button class="shape-sample" id="shapeToggle" type="button" aria-label="Alterar forma demonstrativa"><span>✦</span></button><span>Toque para transformar</span></div><span class="specimen-caption">FORMA + MOTION</span></article>
-          <article class="specimen"><div class="specimen-head"><div><h3>Botões</h3><p>Diferentes níveis de destaque.</p></div><span class="component-number">01</span></div><div class="specimen-body button-demo"><button class="button filled" type="button" data-message="Você clicou no botão preenchido.">Preenchido</button><button class="button tonal" type="button" data-message="Você clicou no botão tonal.">Tonal</button><button class="button text-button" type="button" data-message="Você clicou no botão de texto.">Texto</button></div><span class="specimen-caption">AÇÕES</span></article>
-          <article class="specimen"><div class="specimen-head"><div><h3>Seleção</h3><p>Opções claras para cada contexto.</p></div><span class="component-number">02</span></div><div class="specimen-body chips-demo" role="group" aria-label="Exemplo de filtros"><button class="chip selected" type="button" aria-pressed="true">Todos</button><button class="chip" type="button" aria-pressed="false">Design</button><button class="chip" type="button" aria-pressed="false">Código</button></div><span class="specimen-caption">CHIPS</span></article>
-          <article class="specimen"><div class="specimen-head"><div><h3>Superfícies</h3><p>Organize conteúdos com hierarquia.</p></div><span class="component-number">03</span></div><div class="specimen-body"><div class="mini-card"><span class="mini-icon" aria-hidden="true">◫</span><div><strong>Cartão de exemplo</strong><span>Uma superfície para seu conteúdo</span></div><span class="mini-arrow" aria-hidden="true">↗</span></div></div><span class="specimen-caption">CARTÕES</span></article>
-          <article class="specimen glass-specimen"><div class="specimen-head"><div><h3>Vidro e movimento</h3><p>Uma superfície translúcida sobre um fundo ilustrativo.</p></div><span class="component-number">07</span></div><div class="glass-stage"><div class="glass-orb one" aria-hidden="true"></div><div class="glass-orb two" aria-hidden="true"></div><div class="glass-surface"><strong>Superfície de vidro</strong><span>Desfoque com fallback sem transparência.</span></div></div><span class="specimen-caption">GLASS + MOTION</span></article>
-          <article class="specimen"><div class="specimen-head"><div><h3>Progresso</h3><p>Mostre o estado de uma tarefa.</p></div><span class="component-number">04</span></div><div class="specimen-body progress-demo"><div class="progress-label"><span>Carregando recursos</span><strong>68%</strong></div><div class="progress" role="progressbar" aria-label="Progresso de exemplo" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"><span></span></div></div><span class="specimen-caption">INDICADORES</span></article>
+  <a class="skip-link" href="#main" data-i18n="skip">Pular para o conteúdo</a>
+  <div class="shell">
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="m3 kit — início" data-i18n-aria="homeLabel">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 32.5V15.5c0-2.5 2-4.5 4.5-4.5h23c2.5 0 4.5 2 4.5 4.5v17c0 2.5-2 4.5-4.5 4.5h-23C10 37 8 35 8 32.5Z"/><path d="M15 29V19l5.4 7.1L26 19v10M31 19v10"/></svg>
+        <span><strong>m3 kit</strong><small data-i18n="brandSub">web + android</small></span>
+      </a>
+      <nav class="primary-nav" aria-label="Navegação principal" data-i18n-aria="mainNav">
+        <a class="is-current" href="#inicio" data-i18n="navOverview">Visão geral</a>
+        <a href="#laboratorio" data-i18n="navLab">Laboratório</a>
+        <a href="#componentes" data-i18n="navComponents">Componentes</a>
+        <a href="#comece" data-i18n="navStart">Comece</a>
+      </nav>
+      <div class="header-actions">
+        <label class="language-picker"><span class="sr-only" data-i18n="language">Idioma</span><select id="languageSelect" aria-label="Idioma" data-i18n-aria="language"><option value="auto" data-i18n="automatic">Automático</option><option value="pt-BR">Português</option><option value="en">English</option><option value="es">Español</option></select></label>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Ativar tema escuro" data-i18n-aria="enableDark"><svg viewBox="0 0 24 24" aria-hidden="true"><path id="themeIcon" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg></button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="overline"><span></span><span data-i18n="overline">SISTEMA, NÃO SÓ ESTILO</span></p>
+          <h1 id="hero-title" data-i18n="heroTitle">Material 3 com uma assinatura própria.</h1>
+          <p class="lede" data-i18n="heroText">Uma base editorial para transformar cor, conteúdo e interação em uma interface coerente — no navegador e no Android.</p>
+          <div class="hero-actions"><a class="button primary" href="#laboratorio" data-i18n="explore">Explorar o laboratório</a><a class="button text" href="./examples/minimal.html" data-i18n="minimalLink">Ver exemplo mínimo</a></div>
+        </div>
+        <aside class="hero-note" aria-label="Princípios do kit" data-i18n-aria="principles">
+          <span class="note-index">01—03</span>
+          <strong data-i18n="noteTitle">Feito para ajustar, não para imitar.</strong>
+          <p data-i18n="noteText">Tokens semânticos, contraste e movimento consciente deixam espaço para a identidade do seu produto.</p>
+          <div class="note-rule"></div><span class="note-caption" data-i18n="noteCaption">MATERIAL 3 / STARTER</span>
+        </aside>
+      </section>
+
+      <section class="section studio" id="laboratorio" aria-labelledby="lab-title">
+        <div class="section-heading"><p class="overline"><span></span><span data-i18n="labOverline">LABORATÓRIO DE TEMA</span></p><h2 id="lab-title" data-i18n="labTitle">Uma paleta que acompanha sua ideia.</h2><p data-i18n="labText">Escolha uma cor ou use uma imagem local. Os papéis tonais são calculados com Material Color Utilities no seu navegador.</p></div>
+        <div class="studio-grid">
+          <form class="theme-controls" id="themeForm" novalidate>
+            <fieldset><legend data-i18n="colorSource">Cor de origem</legend><label class="seed-row" for="seedColor"><input id="seedColor" type="color" value="#2f6b46"><span><strong id="seedValue">#2F6B46</strong><small data-i18n="seedHint">Use uma cor da sua marca</small></span></label></fieldset>
+            <fieldset><legend data-i18n="imageSource">Imagem de origem</legend><label class="upload-control" for="wallpaperInput"><span data-i18n="chooseImage">Escolher imagem</span><input id="wallpaperInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif"></label><small id="fileName" data-i18n="imageHint">PNG, JPG, WebP ou GIF · até 12 MB</small></fieldset>
+            <div class="control-actions"><button class="button tonal" id="copyTokens" type="button" data-i18n="copyTokens">Copiar tokens</button><button class="button text" id="resetTheme" type="button" data-i18n="reset">Restaurar</button></div>
+            <p id="paletteStatus" class="status" role="status" aria-live="polite"></p>
+          </form>
+          <div class="theme-preview" aria-label="Prévia de tema" data-i18n-aria="themePreview">
+            <div class="preview-top"><span data-i18n="previewLabel">PRÉVIA AO VIVO</span><span class="seed-dot" aria-hidden="true"></span></div>
+            <div class="preview-card"><span class="preview-number">03</span><h3 data-i18n="previewTitle">Ritmo, não ruído.</h3><p data-i18n="previewText">Superfícies dão contexto; a cor orienta decisões.</p><button class="preview-action" type="button" data-message="Ação demonstrativa concluída." data-i18n="previewAction">Continuar</button></div>
+            <div class="palette-strip" aria-label="Papéis de cor" data-i18n-aria="colorRoles"><span class="role-primary">Primary</span><span class="role-container">Container</span><span class="role-surface">Surface</span><span class="role-secondary">Secondary</span></div>
+          </div>
         </div>
       </section>
-      <section id="cores" class="section colors-section" aria-labelledby="colors-heading"><div class="section-head"><div><p class="section-kicker">02 / PERSONALIZAÇÃO</p><h2 id="colors-heading">Cores que fazem sentido</h2><p>Papéis semânticos ajudam a manter uma identidade consistente.</p></div></div><div class="color-panel"><div class="color-copy"><div class="color-label">PALETA DA DEMO</div><h3>Experimente uma cor</h3><p>Gera os papéis tonais com Material Color Utilities. Você também pode extrair uma cor de uma imagem; a imagem é processada localmente no navegador.</p><label class="color-control" for="seedColor"><input type="color" id="seedColor" value="#6750a4"><span>Escolher cor de destaque</span></label><label class="image-control" for="wallpaperInput">Criar tema a partir de uma imagem <input type="file" id="wallpaperInput" accept="image/*"></label><button class="reset-color" type="button" id="resetColor">Restaurar padrão</button></div><p id="paletteStatus" class="palette-status" role="status" aria-live="polite">Paleta Material gerada no seu navegador.</p><div class="swatches" aria-label="Papéis de cor"><div class="swatch primary"><span>Primary</span><small>Cor de destaque</small></div><div class="swatch primary-container"><span>Primary container</span><small>Superfície tonal</small></div><div class="swatch surface"><span>Surface</span><small>Fundo de conteúdo</small></div><div class="swatch secondary-container"><span>Secondary container</span><small>Ênfase suave</small></div></div></div></section>
-      <section id="usar" class="section" aria-labelledby="usage-heading"><div class="section-head"><div><p class="section-kicker">03 / PRIMEIROS PASSOS</p><h2 id="usage-heading">Comece com o que você usa</h2><p>Código e instruções para cada plataforma estão no repositório.</p></div></div><div class="usage-grid"><a class="usage-card" href="https://github.com/in3zalo-gk/material-you-starter-kit/tree/main/web"><span class="usage-icon" aria-hidden="true">&lt;/&gt;</span><div><strong>Para web</strong><span>CSS, tokens, componentes e Vite.</span></div><span class="usage-arrow" aria-hidden="true">↗</span></a><a class="usage-card" href="https://github.com/in3zalo-gk/material-you-starter-kit/tree/main/android"><span class="usage-icon" aria-hidden="true">▣</span><div><strong>Para Android</strong><span>Exemplo nativo com Jetpack Compose.</span></div><span class="usage-arrow" aria-hidden="true">↗</span></a></div></section>
-      <footer class="page-footer"><div><strong>Material You Starter Kit</strong><span>Um projeto da comunidade, aberto para todo mundo.</span></div><div><a href="https://m3.material.io/">Material Design ↗</a><a href="https://github.com/in3zalo-gk/material-you-starter-kit">GitHub ↗</a></div></footer>
-    </div>
-  </main>
-</div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+      <section class="section" id="componentes" aria-labelledby="components-title">
+        <div class="section-heading split"><div><p class="overline"><span></span><span data-i18n="componentsOverline">COMPONENTES EM CONTEXTO</span></p><h2 id="components-title" data-i18n="componentsTitle">Menos vitrine. Mais comportamento.</h2></div><p data-i18n="componentsText">Estados, foco e feedback fazem parte do componente — não são acabamento.</p></div>
+        <div class="component-tabs" role="tablist" aria-label="Demonstrações" data-i18n-aria="demos"><button role="tab" id="tab-controls" aria-selected="true" aria-controls="panel-controls" data-tab="controls" tabindex="0" data-i18n="tabControls">Controles</button><button role="tab" id="tab-feedback" aria-selected="false" aria-controls="panel-feedback" data-tab="feedback" tabindex="-1" data-i18n="tabFeedback">Feedback</button><button role="tab" id="tab-dialog" aria-selected="false" aria-controls="panel-dialog" data-tab="dialog" tabindex="-1" data-i18n="tabDialog">Diálogo</button></div>
+        <div class="component-panel" id="panel-controls" role="tabpanel" aria-labelledby="tab-controls"><div class="demo-copy"><span class="demo-kicker" data-i18n="controlsKicker">PREFERÊNCIAS</span><h3 data-i18n="controlsTitle">Ajustes que permanecem claros.</h3><p data-i18n="controlsText">Alternâncias e seleção única com estado programático e foco visível.</p></div><div class="demo-surface"><label class="switch-row"><span><strong data-i18n="notifications">Notificações</strong><small data-i18n="notificationsHint">Atualizações relevantes</small></span><input id="notifications" class="switch" type="checkbox" checked></label><div class="range-row"><label for="intensity" data-i18n="intensity">Intensidade</label><output id="intensityValue" for="intensity">64%</output><input id="intensity" type="range" min="0" max="100" value="64"></div><div class="choice-group" role="group" aria-label="Densidade" data-i18n-aria="density"><button class="chip is-selected" type="button" aria-pressed="true" data-i18n="comfortable">Confortável</button><button class="chip" type="button" aria-pressed="false" data-i18n="compact">Compacta</button></div></div></div>
+        <div class="component-panel" id="panel-feedback" role="tabpanel" aria-labelledby="tab-feedback" hidden><div class="demo-copy"><span class="demo-kicker" data-i18n="feedbackKicker">RETORNO IMEDIATO</span><h3 data-i18n="feedbackTitle">Cada ação deixa um rastro.</h3><p data-i18n="feedbackText">Feedback breve confirma a escolha sem interromper o fluxo.</p></div><div class="demo-surface feedback-demo"><button class="shape-button" id="shapeToggle" type="button" aria-pressed="false" aria-label="Transformar forma" data-i18n-aria="shapeLabel"><span>✦</span></button><button class="button primary" type="button" data-message="Ação demonstrativa concluída." data-i18n="tryFeedback">Testar feedback</button></div></div>
+        <div class="component-panel" id="panel-dialog" role="tabpanel" aria-labelledby="tab-dialog" hidden><div class="demo-copy"><span class="demo-kicker" data-i18n="dialogKicker">DECISÃO CONFIRMADA</span><h3 data-i18n="dialogTitle">Peça atenção na medida certa.</h3><p data-i18n="dialogText">O diálogo prende foco, valida o campo e oferece uma saída explícita.</p></div><div class="demo-surface"><button class="button outlined" id="openDialog" type="button" data-i18n="openDialog">Abrir diálogo</button></div></div>
+      </section>
+
+      <section class="section start" id="comece" aria-labelledby="start-title"><div class="start-card"><div><p class="overline"><span></span><span data-i18n="startOverline">COMECE PEQUENO</span></p><h2 id="start-title" data-i18n="startTitle">Use os tokens. Depois faça seu produto aparecer.</h2></div><div><p data-i18n="startText">O exemplo mínimo mostra a base sem a demo. A mesma linguagem segue para o Compose.</p><div class="hero-actions"><a class="button primary" href="./examples/minimal.html" data-i18n="openMinimal">Abrir HTML mínimo</a><a class="button outlined" href="https://github.com/in3zalo-gk/material-you-starter-kit" data-i18n="github">Ver no GitHub</a></div></div></div></section>
+    </main>
+    <footer><span>m3 kit</span><span data-i18n="footer">Um starter independente para construir com intenção.</span><a href="https://m3.material.io/" data-i18n="materialLink">Material Design 3 ↗</a></footer>
+  </div>
+  <dialog id="exampleDialog" aria-labelledby="dialogTitle"><form method="dialog" id="dialogForm"><button class="dialog-close" value="cancel" aria-label="Fechar" data-i18n-aria="close">×</button><p class="overline"><span></span><span data-i18n="dialogOverline">NOVA SUPERFÍCIE</span></p><h2 id="dialogTitle" data-i18n="dialogFormTitle">Dê um nome ao rascunho</h2><p data-i18n="dialogFormText">Este exemplo valida o campo antes de confirmar.</p><label for="draftName" data-i18n="draftName">Nome</label><input id="draftName" name="draftName" autocomplete="off" required minlength="2" aria-describedby="draftError"><small id="draftError" class="field-error" aria-live="polite"></small><div class="dialog-actions"><button class="button text" value="cancel" formnovalidate data-i18n="cancel">Cancelar</button><button class="button primary" id="confirmDialog" value="default" data-i18n="confirm">Confirmar</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
