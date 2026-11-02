@@ -3,7 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "scripts": {"dev": "vite", "build": "vite build"},
-  "dependencies": {"@material/material-color-utilities": "0.4.0"},
-  "devDependencies": {"vite": "6.4.1"}
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test:e2e": "python3 tests/test_web.py"
+  },
+  "dependencies": {
+    "@material/material-color-utilities": "0.4.0"
+  },
+  "devDependencies": {
+    "vite": "6.4.5"
+  }
 }
