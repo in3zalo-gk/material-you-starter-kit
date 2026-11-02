@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>m3 kit — exemplo mínimo</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../material-you.css">
+  <style>
+    body { display:grid; min-height:100vh; place-items:center; padding:24px; }
+    main { width:min(680px, 100%); padding:clamp(28px, 6vw, 56px); border:1px solid var(--md-sys-color-outline-variant); border-radius:28px 28px 8px 28px; background:var(--md-sys-color-surface); }
+    .sample { margin-top:28px; padding:22px; border-radius:18px; background:var(--md-sys-color-primary-container); color:var(--md-sys-color-on-primary-container); }
+    .sample p { max-width:48ch; margin-bottom:20px; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="overline"><span></span>EXEMPLO MÍNIMO</p>
+    <h1>Uma superfície, alguns tokens, uma decisão clara.</h1>
+    <p class="lede">Copie este ponto de partida quando não precisar da demonstração completa. A cor vem dos mesmos papéis semânticos usados no kit.</p>
+    <section class="sample" aria-labelledby="sample-title">
+      <h2 id="sample-title">Seu próximo passo</h2>
+      <p>Use <code>--md-sys-color-primary</code> com seu par <code>--md-sys-color-on-primary</code>, em vez de escolher cores de texto manualmente.</p>
+      <a class="button primary" href="../index.html">Voltar para a demo</a>
+    </section>
+  </main>
+</body>
+</html>
