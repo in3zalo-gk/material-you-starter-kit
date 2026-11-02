@@ -4,16 +4,24 @@
 
 Material 3 para web e Android, com uma identidade própria. Código aberto, licença MIT. O pacote completo também é open source: não existe edição paga ou proprietária escondida.
 
-[Demo web](https://in3zalo-gk.github.io/material-you-starter-kit/) · [Downloads](https://github.com/in3zalo-gk/material-you-starter-kit/releases/latest) · [Exemplo web](https://in3zalo-gk.github.io/material-you-starter-kit/examples/minimal.html)
+[Demo web](https://in3zalo-gk.github.io/material-you-starter-kit/) · [Galeria interativa](https://in3zalo-gk.github.io/material-you-starter-kit/#galeria) · [Downloads](https://github.com/in3zalo-gk/material-you-starter-kit/releases/latest) · [Exemplo web](https://in3zalo-gk.github.io/material-you-starter-kit/examples/minimal.html)
 
 <img src="assets/web-preview.png" width="100%" alt="Captura real do laboratório web m3 kit">
 
 ## Incluído
 
+- Seleção conectada na web e no Android: o fundo colorido desliza até o botão tocado dentro do grupo, com ripple de interação. Não é apenas uma transição de página.
+- Galeria web: páginas demonstrativas de painel/lista/detalhe, transições opcionais e laboratório de elevação. Dados fictícios.
 - Web: laboratório de cores com Material Color Utilities, tema claro/escuro, imagem processada localmente, exportação de tokens CSS, abas por teclado, diálogo com validação e três idiomas.
 - Android: Compose Material 3 1.4.0, tema sistema/claro/escuro e Dynamic Color persistentes, fallback verde, controles, diálogo, snackbar e idiomas pt/en/es.
 - Exemplos mínimos independentes: HTML em `web/examples/minimal.html` e app nativo em `android/example`.
 - Logo vetorial, arquivos-fonte, documentação e builds web prontos para hospedar.
+
+## Galeria de interação
+
+![Gravação real da seleção conectada na web: o fundo colorido acompanha o botão clicado](assets/connected-selection.gif)
+
+[Experimentar a galeria web](https://in3zalo-gk.github.io/material-you-starter-kit/#galeria). No Android, abra **Explorar → Seleção conectada**. O GIF acima é uma captura da web; não simula uma gravação do app. O novo exemplo nativo está no código atual e não altera os APKs já publicados na v1.0.0.
 
 ## Downloads
 
