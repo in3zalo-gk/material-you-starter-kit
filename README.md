@@ -10,13 +10,29 @@
 </p>
 <p align="center"><a href="https://in3zalo-gk.github.io/material-you-starter-kit/">Demo</a> · <a href="https://in3zalo-gk.github.io/material-you-starter-kit/catalog.html">Catálogo interativo</a> · <a href="https://github.com/in3zalo-gk/material-you-starter-kit/releases/latest">Downloads</a> · <a href="#comece-em-minutos">Quick start</a> · <a href="#documentação">Documentação</a></p>
 
-<img src="assets/web-preview.png" width="100%" alt="Captura real do laboratório de temas m3 kit">
+<a href="https://in3zalo-gk.github.io/material-you-starter-kit/"><img src="assets/showcase-animated.gif" width="100%" alt="Componentes reais do m3 kit: alternância de cores e temas, switches, progresso e navegação conectada entre painel, lista e detalhe"></a>
+<p align="center">Uma composição com componentes reais da web, capturados no navegador. <a href="assets/showcase-poster.png">Ver prévia sem animação</a>.</p>
 
 ## Uma base, duas plataformas
 
 Um starter demonstrativo open source para construir interfaces com Material 3. A **1.0.2** acrescenta um catálogo web com os **43 módulos estáveis exportados por Material Web 2.5.0**, exemplos de integração e mais componentes nativos no Android. O laboratório original, a galeria e os exemplos mínimos continuam disponíveis.
 
 Não é um produto SaaS pronto: não inclui backend, login, pagamentos ou dados de clientes. Não há edição paga escondida. O código próprio é MIT; as dependências mantêm suas licenças, inclusive Apache-2.0 no Material Web.
+
+## Screenshots
+
+<img src="assets/screenshots-web.png" width="100%" alt="Três capturas reais da versão web em largura mobile: laboratório de temas em roxo, catálogo de componentes em azul e galeria de interação">
+
+Laboratório, catálogo e galeria em uma visão organizada. As imagens acima são **da web responsiva**, não capturas do app Android. A animação de abertura reorganiza os componentes reais em uma composição para documentação; não representa um dashboard pronto nem dados de clientes.
+
+<details>
+<summary>Como estas imagens foram feitas</summary>
+
+Capturas com Chromium/Playwright, a partir da [demo publicada](https://in3zalo-gk.github.io/material-you-starter-kit/). A animação registra controles reais, alternância de tema e navegação conectada. Pillow organiza as capturas e gera o GIF. Nenhuma imagem do Material Web upstream foi reutilizada.
+
+Para reproduzir, instale `playwright` e `pillow`, execute `python -m playwright install chromium` e rode `python scripts/capture_readme.py` na raiz do repositório. O script usa DejaVu Sans em uma instalação Linux padrão e exige acesso à demo publicada. A prévia estática permanece disponível para quem prefere evitar movimento.
+
+</details>
 
 ## Explore
 
